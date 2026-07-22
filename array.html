@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const notas = [8, 7.5, 10]
+        const nomes = ["ana", "bruno", "carlos"]
+
+        console.log(notas[0])
+        console.log(nomes.length)
+
+        const paginainsta = {
+            bio: "sou dev",
+            foto: ":)",
+            nome: "ronaldo",
+            arroba: "ronaldinho_da_bola_azul"
+        }
+        
+        console.log(`meu nome é ${paginainsta.nome} e minha bio é: ${paginainsta.bio}`)
+        console.log(`meu nome é ${paginainsta['nome']} e minha bio é: ${paginainsta['bio']}`)
+
+        const carrinho = [
+            {
+                nome: "faca guinzo",
+                valor: "299.99",
+                tag: ["em alta", "cozinha", "desconto"]
+            },
+            {
+                nome: "faca tico tico",
+                valor: "599.99",
+                tag: ["em alta", "desconto"]
+            },
+            {
+                nome: "tico tico",
+                valor: "999.99",
+                tag: ["em alta", "cozinha"]
+            }
+        ]
+        
+        let somatotal = 0
+        carrinho.map(produto => {
+            somatotal += produto.valor
+        })
+        console.log(`O soma total é: ${somatotal}`)
+    </script>
+</body>
+</html>
