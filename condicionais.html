@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <p style="font-size: 200px;">hello world</p>
+        <script>
+            const MAIOREDADE = 18
+            const idadeUser = prompt("Qual a sua idade?")
+
+            if (idadeUser >= MAIOREDADE) {
+                console.log("maior de idade.")
+            } else {
+                console.log("menor de idade.")
+            }
+
+            const MINIMO_PRESENCA = 75
+            const mediaaluno = prompt("Qual a media do aluno?")
+            const presencaaluno = prompt("Qual a presenca do aluno?")
+
+            if (presencaaluno < MINIMO_PRESENCA || mediaaluno < 35) {
+                console.log("REPROVADO")
+            } else if (mediaaluno < 50) {
+                console.log("RECUPERAÇÃO")
+            } else {
+                console.log("APROVADO")
+            }
+
+            const perfil = prompt("qual seu perfil de usuário?")
+            switch (perfil) {
+                case "admin":
+                    console.log("perfil admininistrador")
+                    break;
+                case "user":
+                    console.log("perfil usuário")
+                    break;
+                default:
+                    console.log("perfil desconhecido")
+                    break;
+            }
+
+            const temCNH = true;
+            const bebeu = true;
+            const podedirigir = (temCNH == true && bebeu == false)
+                                ? true //tem cnh e não bebeu
+                                : false //não tem cnh ou bebeu
+            console.log(`meliante bebeu? ${bebeu}... tem CNH? ${temCNH}
+            \n pode dirigir? ${podedirigir}`);
+        </script>
+    </body>
+</html>

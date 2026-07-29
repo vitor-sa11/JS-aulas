@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //    const NUM_INFERIOR = 0
+    //    const NUM_SUPERIOR = 10
+    //     for(let i = NUM_INFERIOR; i <= NUM_SUPERIOR; i++) {
+    //         console.log(`numero: ${i}`)
+    //     }
+
+        let resposta = prompt("Quer ver alguns numeros?")
+        let userquercontinuar  = resposta == "sim"
+        let contador = 0
+        while (userquercontinuar) {
+            console.log(`valor do contator é ${contador}`)
+
+            resposta = prompt("Quer ver alguns numeros?")
+            userquercontinuar = resposta == "sim"
+            contador++
+        }
+    </script>
+</body>
+</html>
