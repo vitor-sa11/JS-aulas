@@ -11,13 +11,16 @@
     <p id="paragrafo2">depois dos fundamentos, vamos ver a api do navegador</p>
 
     <img id="imgilustrativa" src="https://placehold.co/600x400" alt="">
+    <br>
     <button id="botaotop" type="button">Fazer algo legal</button>
 
     <div id="modal" class="oculta modal">
         <h2 style="margin-bottom: -5px;">titulo do modal</h2>
         <p>descrição do modal.</p>
-        <button type="button" onclick="fecharModal()">Fechar</button>
+        <button type="button" id="fechar">Fechar</button>
     </div>
+
+    <p id="contar">foi aberto 0 vezes</p>
 
     <style>
         .chamativo {
@@ -44,9 +47,24 @@
             transform: translate(-50%, -50%);
             padding: 20px;
             background-color: rgb(145, 72, 0);
+            backdrop-filter: blur(5px);
             color: white;
             border: 2px solid rgb(90, 46, 2);
             border-radius: 10px;
+        }
+
+        button{
+            padding: 10px;
+            border-radius: 5px;
+            background-color: rgb(90, 46, 2);
+            color: white;
+            border: none;
+        }
+
+        button:hover{
+            background-color: rgba(0, 0, 0, 0.733);
+            cursor: pointer;
+            border: 1px solid rgb(90, 46, 2);
         }
     </style>
 
@@ -64,14 +82,21 @@
 
         const botao = document.querySelector("#botaotop")
         botao.addEventListener("click", abrirModal)
-
+        
+        let contador = 0
+        const modal = document.querySelector("#modal")
+        const contarElement = document.querySelector("#contar")
         function abrirModal() {
-            const modal = document.querySelector("#modal")
             modal.classList.remove('oculta')
             modal.classList.add('visivel')
+            contador++
+            contarElement.innerText = `foi aberto ${contador} vezes`
         }
+
+        const fecharBotao = document.querySelector("#fechar")
+        fecharBotao.addEventListener("click", fecharModal)
+        
         function fecharModal() {
-            const modal = document.querySelector("#modal")
             modal.classList.remove('visivel')
             modal.classList.add('oculta')
         }
