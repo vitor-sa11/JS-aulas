@@ -6,22 +6,22 @@
     <title>Document</title>
 </head>
 <body>
-    <h2 id="titulo">aprendendo o dom</h2>
-    <p id="paragrafo1">manipulando elementos com js</p>
-    <p id="paragrafo2">depois dos fundamentos, vamos ver a api do navegador</p>
+    <div class="normal" id="fundo-modal">
+        <h2 id="titulo">aprendendo o dom</h2>
+        <p id="paragrafo1">manipulando elementos com js</p>
+        <p id="paragrafo2">depois dos fundamentos, vamos ver a api do navegador</p>
 
-    <img id="imgilustrativa" src="https://placehold.co/600x400" alt="">
-    <br>
-    <button id="botaotop" type="button">Fazer algo legal</button>
+        <img id="imgilustrativa" src="https://placehold.co/600x400" alt="">
+        <br>
+        <button id="botaotop" type="button">Fazer algo legal</button>
 
+        <p id="contar">foi aberto 0 vezes</p>
+    </div>
     <div id="modal" class="oculta modal">
         <h2 style="margin-bottom: -5px;">titulo do modal</h2>
         <p>descrição do modal.</p>
         <button type="button" id="fechar">Fechar</button>
     </div>
-
-    <p id="contar">foi aberto 0 vezes</p>
-
     <style>
         .chamativo {
             background-color: red;
@@ -65,6 +65,10 @@
             cursor: pointer;
             border: 1px solid rgb(90, 46, 2);
         }
+
+        .fundo {
+            filter: blur(10px);
+        }
     </style>
 
     <script>
@@ -98,6 +102,23 @@
         function fecharModal() {
             modal.classList.remove('visivel')
             modal.classList.add('oculta')
+        }
+
+        const fundoTop = document.querySelector("#fundo-modal")
+        const esmaecer = document.querySelector("#botaotop")
+        esmaecer.addEventListener("click", fundoModal)
+
+        function fundoModal() {
+            fundoTop.classList.remove('normal')
+            fundoTop.classList.add('fundo')
+        }
+
+        const fecharFundo = document.querySelector("#fechar")
+        fecharFundo.addEventListener("click", fecharFundoModal)
+
+        function fecharFundoModal() {
+            fundoTop.classList.remove('fundo')
+            fundoTop.classList.add('normal')
         }
     </script>
 </body>
